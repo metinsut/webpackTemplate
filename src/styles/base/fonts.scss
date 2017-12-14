@@ -1,0 +1,25 @@
+//DOSYAYI AKTARIĞIMIZ YER
+@mixin font-face($family) {
+    $filepath: "~/../../../../assets/fonts/" + $family;
+    @font-face {
+        font-family: "#{$family}";
+        src: 
+          url($filepath + ".eot"), 
+          url($filepath + ".eot?#iefix") format('embedded-opentype'), 
+          url($filepath + ".woff") format('woff'), 
+          url($filepath + ".ttf") format('truetype'), 
+          url($filepath + ".svg#" + $family + "") format('svg');
+        font-weight: normal;
+        font-style: normal;
+    }
+}
+
+//MIXINI TETİKLEDİĞİZ YER
+@include font-face('JosefinSans-Regular');
+
+
+// SCSS İÇİN KULLANIMA HAZIR FONT
+@mixin JosefinSans-Regular{
+  font-family: "JosefinSans-Regular",arial, helvetica, sans-serif;
+  font-weight: normal;
+}

@@ -1,0 +1,33 @@
+.sprite-main {
+    display: inline-block;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    // background-image: url("../../../static/img/sprite/");
+  }
+
+
+  @each $bg, $width, $height, $x, $y in
+                  (fb, 34, 26, 0, 0),
+                  (twitter, 34, 26, 34, 0),
+                  (linkedin, 34, 26, 68, 0),
+                  (youtube, 34, 26, 102, 0),
+                  (fbGr, 34, 26, 0, 74),
+                  (twitterGr, 34, 26, 34, 74),
+                  (linkedinGr, 34, 26, 68, 74),
+                  (youtubeGr, 34, 26, 102, 74),
+                  (leftArr, 14, 10, 0, 56),
+                  (rightArr, 14, 10, 14, 56),
+                  (downArr, 12, 14, 29, 55),
+                  (nextIcon, 18, 16, 42, 54),
+                  (stopIcon, 18, 16, 60, 54),
+                  (playIcon, 18, 16, 78, 54),
+                  (homeIcon, 18, 17, 97, 53),
+  
+  {
+    .#{$bg} {
+      @extend .sprite-main;
+      background-position: -#{$x}px -#{$y}px;
+      width: #{$width}px;
+      height: #{$height}px;
+    }
+  }
